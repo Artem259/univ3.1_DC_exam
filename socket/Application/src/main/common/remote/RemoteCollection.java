@@ -3,7 +3,6 @@ package main.common.remote;
 import main.common.Product;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface RemoteCollection {

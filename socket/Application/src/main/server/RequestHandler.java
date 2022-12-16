@@ -1,11 +1,11 @@
 package main.server;
 
 import main.common.Product;
-import main.common.remote.RemoteCollection;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.Arrays;
 
 public class RequestHandler implements Runnable {
     private final ServerRemoteCollection collection;

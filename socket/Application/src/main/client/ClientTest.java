@@ -3,7 +3,6 @@ package main.client;
 
 import main.common.Product;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -154,6 +153,16 @@ public class ClientTest {
         }
     }
 
+    public void testProductsByMinStoragePeriod() throws IOException, ClassNotFoundException {
+        List<Product> list = new ArrayList<>();
+        list.add(products.get(0));
+        list.add(products.get(3));
+
+        if (!Objects.equals(collection.productsByMinStoragePeriod(365), list)) {
+            throw new RuntimeException();
+        }
+    }
+
     public void start() throws IOException, ClassNotFoundException {
         refill();
         printCollection();
@@ -167,8 +176,8 @@ public class ClientTest {
 
         refill();
         testProductsByNameAndMaxPrice();
-/*
+
         refill();
-        testProductsByMinStoragePeriod();*/
+        testProductsByMinStoragePeriod();
     }
 }
